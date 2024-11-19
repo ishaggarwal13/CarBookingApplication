@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#ffa800</color>
+    <color name="primaryVariant">#ffc65a</color>
+    <color name="pointerColor">#4252FF</color>
+    <color name="pointerVariant">#F52D56</color>
+    <color name="backgroundColor">#FAFAFA</color>
+    <color name="foregroundColor">#B9B9B9</color>
+    <color name="fontColor">#ffffff</color>
+    <color name="blackFontColor">#262628</color>
+    <color name="blackVariant">#323235</color>
+    <color name="secondaryFontColor">#999999</color>
+
+</resources>

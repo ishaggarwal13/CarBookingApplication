@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CarBookingApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+
+        <!-- Pointer Colors -->
+        <item name="colorSecondary">@color/pointerColor</item>
+        <item name="colorSecondaryVariant">@color/pointerVariant</item>
+
+        <!-- Background Colors -->
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="android:colorBackground">@color/backgroundColor</item>
+
+        <!-- Text Colors -->
+        <item name="android:textColorPrimary">@color/fontColor</item>
+        <item name="android:textColorSecondary">@color/secondaryFontColor</item>
+        <item name="android:textColorTertiary">@color/blackFontColor</item>
+
+        <!-- Button Styles -->
+        <item name="android:buttonStyle">@style/CustomButtonStyle</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/primaryColor</item>
+        <item name="android:navigationBarColor">@color/primaryVariant</item>
+
+    </style>
+
+
+    <style name="Theme.CarBookingApplication" parent="Base.Theme.CarBookingApplication" />
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingConfirmationActivity"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/primaryVariant">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bookingCardView"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="12dp"
+        android:padding="16dp"
+        android:minWidth="300dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:id="@+id/done"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/confirm"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/booking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="26dp"
+                android:textColor="@color/blackFontColor"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="Booking Successful"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/bookingDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/blackFontColor"
+                android:text="You're off to your destination!"
+                android:paddingBottom="16dp" />
+
+            <Button
+                android:id="@+id/closeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

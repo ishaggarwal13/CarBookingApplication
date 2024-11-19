@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:padding="20dp"
+    android:background="?attr/colorPrimaryVariant"
+    android:gravity="center">
+
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo" />
+
+
+    <!-- CardView for the login content -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginCardView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="12dp"
+        android:padding="20dp"
+        android:minWidth="300dp">
+
+        <!-- LinearLayout for organizing content vertically -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="295dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Email EditText -->
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <!-- Password EditText -->
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="?attr/colorPrimary"
+            android:padding="12dp"
+            android:text="Login"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+            <!-- Register Text -->
+            <TextView
+                android:id="@+id/registerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Don't have an account? Register here"
+                android:textColor="?attr/colorPrimary"
+            android:textSize="16sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
