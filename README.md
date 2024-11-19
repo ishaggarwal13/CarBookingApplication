@@ -73,24 +73,25 @@ To get started with this project, follow these steps:
 The app starts with a splash screen that automatically transitions to the Login Activity.
 
 2. Login and Registration
-Login Page: Allows users to log in with existing credentials.
-Registration Page: Allows new users to create an account by entering their name, email, and password.
-3. Main Activity
-Users enter:
+- Login Page: Allows users to log in with existing credentials.
+- Registration Page: Allows new users to create an account by entering their name, email, and password.
 
-Pickup Location
-Drop-off Location
-Travel Date (using the date picker)
-Number of Passengers
+3. Main Activity
+- Users enter:
+   -- Pickup Location
+   -- Drop-off Location
+   -- Travel Date (using the date picker)
+   -- Number of Passengers
 Once these details are provided, users can click the Search button to find available drivers.
 
 4. Driver List Activity
 A list of available drivers is displayed in a RecyclerView with information such as name, price, and available time.
 Users can click the Book button on a driver to view more details.
-5. Driver Details
+
+6. Driver Details
 This activity shows the selected driver’s details on a map, displaying the route from the pickup location to the drop-off location.
 
-6. Booking Confirmation
+7. Booking Confirmation
 After selecting a driver, the user can confirm the booking and proceed to the final confirmation screen.
 
 
