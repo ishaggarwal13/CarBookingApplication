@@ -15,25 +15,25 @@ The **Car Booking Application** is an Android application that allows users to s
 ## Screenshots
 
 ### Splash Screen
-![Splash Screen](Snapshots/splash_screen.png)
+![Splash Screen](Snapshots/splash_screen.png =300x)
 
 ### Login Page
-![Login Page](Snapshots/Login.png)
+![Login Page](Snapshots/Login.png =300x)
 
 ### Register Page
-![Register Page](Snapshots/Register.png)
+![Register Page](Snapshots/Register.png =300x)
 
 ### Main Activity
-![Main Activity](Snapshots/MainPage.png)
+![Main Activity](Snapshots/MainPage.png =300x)
 
 ### Driver List
-![Driver List](Snapshots/DriverList.png)
+![Driver List](Snapshots/DriverList.png =300x)
 
 ### Driver Details
-![Driver Details](Snapshots/DriverDetails.png)
+![Driver Details](Snapshots/DriverDetails.png =300x)
 
 ### Booking Confirmation
-![Booking Confirmation](Snapshots/Booking.png)
+![Booking Confirmation](Snapshots/Booking.png =300x)
 
 ## Technology Stack
 
@@ -69,30 +69,30 @@ To get started with this project, follow these steps:
 
 
 ## Usage
-1. Splash Screen
-The app starts with a splash screen that automatically transitions to the Login Activity.
+**1. Splash Screen:** 
+   - The app starts with a splash screen that automatically transitions to the Login Activity.
 
-2. Login and Registration
-- Login Page: Allows users to log in with existing credentials.
-- Registration Page: Allows new users to create an account by entering their name, email, and password.
+**2. Login and Registration:**
+   - Login Page: Allows users to log in with existing credentials.
+   - Registration Page: Allows new users to create an account by entering their name, email, and password.
 
-3. Main Activity
+**3. Main Activity:**
 - Users enter:
-   -- Pickup Location
-   -- Drop-off Location
-   -- Travel Date (using the date picker)
-   -- Number of Passengers
-Once these details are provided, users can click the Search button to find available drivers.
+   - Pickup Location
+   - Drop-off Location
+   - Travel Date (using the date picker)
+   - Number of Passengers
+- Once these details are provided, users can click the Search button to find available drivers.
 
-4. Driver List Activity
-A list of available drivers is displayed in a RecyclerView with information such as name, price, and available time.
-Users can click the Book button on a driver to view more details.
+**4. Driver List Activity:**
+   - A list of available drivers is displayed in a RecyclerView with information such as name, price, and available time.
+   - Users can click the Book button on a driver to view more details.
 
-6. Driver Details
-This activity shows the selected driver’s details on a map, displaying the route from the pickup location to the drop-off location.
+**6. Driver Details:**
+   - This activity shows the selected driver’s details on a map, displaying the route from the pickup location to the drop-off location.
 
-7. Booking Confirmation
-After selecting a driver, the user can confirm the booking and proceed to the final confirmation screen.
+**7. Booking Confirmation:**
+   - After selecting a driver, the user can confirm the booking and proceed to the final confirmation screen.
 
 
 ## Code Structure
