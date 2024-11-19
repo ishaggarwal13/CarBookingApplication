@@ -15,19 +15,25 @@ The **Car Booking Application** is an Android application that allows users to s
 ## Screenshots
 
 ### Splash Screen
-![Splash Screen](snapshots/splash_screen.png)
+![Splash Screen](Snapshots/splash_screen.png)
 
 ### Login Page
-![Login Page](snapshots/login_page.png)
+![Login Page](Snapshots/Login.png)
+
+### Register Page
+![Register Page](Snapshots/Register.png)
 
 ### Main Activity
-![Main Activity](snapshots/main_activity.png)
+![Main Activity](Snapshots/MainPage.png)
 
 ### Driver List
-![Driver List](snapshots/driver_list.png)
+![Driver List](Snapshots/DriverList.png)
+
+### Driver Details
+![Driver Details](Snapshots/DriverDetails.png)
 
 ### Booking Confirmation
-![Booking Confirmation](snapshots/booking_confirmation.png)
+![Booking Confirmation](Snapshots/Booking.png)
 
 ## Technology Stack
 
