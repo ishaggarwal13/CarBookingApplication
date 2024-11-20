@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
                 val ride = Ride(pickup = pickup, dropOff = dropOff, date = date, passengers = passengers)
 
-                // Insert the ride data into the Room database (on background thread)
+
                 lifecycleScope.launch(Dispatchers.IO) {
                     val db = Room.databaseBuilder(applicationContext, UserDatabase::class.java, "ride_db").build()
                     db.rideDao().insertRide(ride)

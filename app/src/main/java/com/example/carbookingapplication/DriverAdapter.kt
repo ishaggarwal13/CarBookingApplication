@@ -11,69 +11,68 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class DriverAdapter(private val context: Context,
-                    private val locationGroups: List<LocationGroup>,
-                    private val pickup: String?,
-                    private val dropOff: String?) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DriverAdapter(
+    private val context: Context,
+    private val locationGroups: List<LocationGroup>,
+    private val pickup: String?,
+    private val dropOff: String?
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val VIEW_TYPE_HEADER = 0
     private val VIEW_TYPE_DRIVER = 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == VIEW_TYPE_HEADER) {
-            val view =
-                LayoutInflater.from(context).inflate(R.layout.item_location_header, parent, false)
+            val view = LayoutInflater.from(context)
+                .inflate(R.layout.item_location_header, parent, false)
             LocationViewHolder(view)
         } else {
-            val view = LayoutInflater.from(context).inflate(R.layout.driver_card, parent, false)
+            val view = LayoutInflater.from(context)
+                .inflate(R.layout.driver_card, parent, false)
             DriverViewHolder(view)
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        var itemPosition = position
-        for (locationGroup in locationGroups) {
-            // If it's the location view
-            if (itemPosition == 0) {
-                val locationViewHolder = holder as LocationViewHolder
-                locationViewHolder.bind(locationGroup.location)
-                return
-            }
-            itemPosition -= 1 // Adjust position to move past location header
-
-            // If it's a driver view
-            if (itemPosition < locationGroup.drivers.size) {
-                val driverViewHolder = holder as DriverViewHolder
-                driverViewHolder.bind(locationGroup.drivers[itemPosition])
-                return
-            }
-
-            // Update itemPosition after binding all drivers for a location
-            itemPosition -= locationGroup.drivers.size
-        }
-    }
-
-
     override fun getItemCount(): Int {
-        var count = 0
-        for (locationGroup in locationGroups) {
-            count += 1 // for the location item
-            count += locationGroup.drivers.size // for each driver under the location
-        }
-        return count
+        return locationGroups.sumOf { it.drivers.size + 1 }
     }
 
     override fun getItemViewType(position: Int): Int {
-        var itemPosition = position
-        for (locationGroup in locationGroups) {
-            if (itemPosition == 0) return VIEW_TYPE_HEADER
-            itemPosition -= 1
-
-            if (itemPosition < locationGroup.drivers.size) return VIEW_TYPE_DRIVER
-            itemPosition -= locationGroup.drivers.size
+        var currentPosition = position
+        for (group in locationGroups) {
+            if (currentPosition == 0) {
+                return VIEW_TYPE_HEADER
+            }
+            currentPosition--
+            if (currentPosition < group.drivers.size) {
+                return VIEW_TYPE_DRIVER
+            }
+            currentPosition -= group.drivers.size
         }
-        return -1
+        return VIEW_TYPE_DRIVER
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        var currentPosition = position
+        var groupIndex = 0
+
+        while (groupIndex < locationGroups.size) {
+            val currentGroup = locationGroups[groupIndex]
+
+            if (currentPosition == 0) {
+                (holder as LocationViewHolder).bind(currentGroup.location)
+                return
+            }
+            currentPosition--
+
+            if (currentPosition < currentGroup.drivers.size) {
+                (holder as DriverViewHolder).bind(currentGroup.drivers[currentPosition])
+                return
+            }
+
+            currentPosition -= currentGroup.drivers.size
+            groupIndex++
+        }
     }
 
     inner class LocationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -101,29 +100,29 @@ class DriverAdapter(private val context: Context,
             rideTimeTextView.text = driverData.rideTime
             driverPriceTextView.text = "Price: ${driverData.price}"
 
-            // Intent for "Book" Button
             bookButton.setOnClickListener {
-                val intent = Intent(itemView.context, BookingConfirmationActivity::class.java)
-                intent.putExtra("driverName", driverData.driverName)
-                intent.putExtra("price", driverData.price)
-                intent.putExtra("pickupTime", driverData.pickupTime)
-                intent.putExtra("dropTime", driverData.dropTime)
-                intent.putExtra("location", driverData.location)
-                intent.putExtra("rideTime", driverData.rideTime)
+                val intent = Intent(itemView.context, BookingConfirmationActivity::class.java).apply {
+                    putExtra("driverName", driverData.driverName)
+                    putExtra("price", driverData.price)
+                    putExtra("pickupTime", driverData.pickupTime)
+                    putExtra("dropTime", driverData.dropTime)
+                    putExtra("location", driverData.location)
+                    putExtra("rideTime", driverData.rideTime)
+                }
                 itemView.context.startActivity(intent)
             }
 
-            // Intent for clicking on the card
             itemView.setOnClickListener {
-                val intent = Intent(itemView.context, DriverDetailsActivity::class.java)
-                intent.putExtra("pickup_location", pickup)
-                intent.putExtra("drop_location", dropOff)
-                intent.putExtra("driverName", driverData.driverName)
-                intent.putExtra("price", driverData.price)
-                intent.putExtra("pickupTime", driverData.pickupTime)
-                intent.putExtra("dropTime", driverData.dropTime)
-                intent.putExtra("location", driverData.location)
-                intent.putExtra("rideTime", driverData.rideTime)
+                val intent = Intent(itemView.context, DriverDetailsActivity::class.java).apply {
+                    putExtra("pickup_location", pickup)
+                    putExtra("drop_location", dropOff)
+                    putExtra("driverName", driverData.driverName)
+                    putExtra("price", driverData.price)
+                    putExtra("pickupTime", driverData.pickupTime)
+                    putExtra("dropTime", driverData.dropTime)
+                    putExtra("location", driverData.location)
+                    putExtra("rideTime", driverData.rideTime)
+                }
                 itemView.context.startActivity(intent)
             }
         }

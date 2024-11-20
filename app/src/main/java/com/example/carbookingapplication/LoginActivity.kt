@@ -54,6 +54,5 @@ class LoginActivity : AppCompatActivity() {
         registerTextView.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
-
     }
 }

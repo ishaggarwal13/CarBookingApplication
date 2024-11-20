@@ -29,7 +29,7 @@ class BookingConfirmationActivity : AppCompatActivity() {
             Price: $${price}
             Pickup Time: $pickupTime
             Drop Time: $dropTime
-            Ride Time: $rideTime min
+            Ride Time: $rideTime
         """.trimIndent()
 
         val bookingDetails = findViewById<TextView>(R.id.bookingDetails)

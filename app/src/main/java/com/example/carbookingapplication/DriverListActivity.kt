@@ -1,6 +1,7 @@
 package com.example.carbookingapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,8 +21,6 @@ class DriverListActivity : AppCompatActivity() {
 
         val pickup = intent.getStringExtra("pickup_location")
         val dropOff = intent.getStringExtra("drop_location")
-        val date = intent.getStringExtra("date")
-        val passengers = intent.getIntExtra("passenger_count", 1)
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -54,8 +53,11 @@ class DriverListActivity : AppCompatActivity() {
 
         locationMap.forEach { (location, drivers) ->
             locationGroups.add(LocationGroup(location, drivers))
+            Log.d("DriverAdapter", "Location: $location, Drivers count: ${drivers.size}")
+            drivers.forEach { driver ->
+                Log.d("DriverAdapter", "Driver: ${driver.driverName}")
+            }
         }
-
 
         driverAdapter.notifyDataSetChanged()
     }
